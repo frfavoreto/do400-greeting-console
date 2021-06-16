@@ -22,10 +22,12 @@ pipeline{
         }
 
         stage("Release"){
-	  sh '''
-            oc project steve-hillyer-greetings
-	    oc start-build greeting-console --follow --wait
-	  '''
+	  steps {
+		  sh '''
+	            oc project steve-hillyer-greetings
+		    oc start-build greeting-console --follow --wait
+		  '''
+	  }
 	}
     }
 }
