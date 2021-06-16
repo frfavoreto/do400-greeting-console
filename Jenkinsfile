@@ -21,6 +21,10 @@ pipeline{
             }
         }
 
-        // Add the Release stage here
+        stage("Release"){
+	  sh '''
+            oc project steve-hillyer-greetings
+	    oc start-build greeting-console --follow --wait
+	}
     }
 }
