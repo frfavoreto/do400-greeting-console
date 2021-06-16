@@ -25,6 +25,7 @@ pipeline{
 	  sh '''
             oc project steve-hillyer-greetings
 	    oc start-build greeting-console --follow --wait
+	  '''
 	}
     }
 }
